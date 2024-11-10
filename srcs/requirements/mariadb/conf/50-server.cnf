@@ -1,0 +1,26 @@
+#
+# These groups are read by MariaDB server.
+# Use it for options that only the server (but not clients) should see
+
+# this is read by the standalone daemon and embedded servers
+[server]
+
+# this is only for the mysqld standalone daemon
+[mysqld]
+
+# Autres configurations nécessaires
+user                    = mysql
+pid-file                = /run/mysqld/mysqld.pid
+socket                  = /run/mysqld/mysqld.sock
+datadir                 = /var/lib/mysql
+#log-error               = /var/log/mysql/error.log
+basedir                 = /usr
+tmpdir                  = /tmp
+port                    = 3306
+
+# Liaison à toutes les adresses
+bind-address = 0.0.0.0
+
+# Broken reverse DNS slows down connections considerably and name resolve is
+# safe to skip if there are no "host by domain name" access grants
+#skip-name-resolve
