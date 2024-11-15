@@ -5,8 +5,9 @@ PATH_TO_ENV_FILE = ./srcs/.env
 all : down build run
 
 run:
-	docker compose -f ${PATH_DOCKER_COMPOSE} -p ${NAME} up
-
+	docker compose -f ${PATH_DOCKER_COMPOSE} -p ${NAME} up 
+# -p nom du projet == namespace inception, sert a regrouper les containers, network permet la communication des containers.
+# eval question : docker compose ps -p inception nginx
 run-daemon:
 	docker compose -f ${PATH_DOCKER_COMPOSE} -p ${NAME} up -d
 
